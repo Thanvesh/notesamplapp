@@ -82,7 +82,7 @@ const Layout = () => {
                   path="/notes"
                   element={
                     <ProtectedRoute>
-                      <NotesContainer searchTerm={searchTerm} viewMode={viewMode} onEdit={handleEditNote}  />
+                      <NotesContainer searchTerm={searchTerm} viewMode={viewMode} onEdit={handleEditNote}  notes={notes} setNotes={setNotes}/>
                     </ProtectedRoute>
                   }
                 />

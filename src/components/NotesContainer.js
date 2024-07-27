@@ -1,11 +1,10 @@
 // src/components/NotesContainer.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Note from './Note';
 import { fetchNotes, deleteNote } from '../api';
 import "../styles.css";
 
-const NotesContainer = ({ searchTerm, viewMode,onEdit  }) => {
-  const [notes, setNotes] = useState([]);
+const NotesContainer = ({notes, setNotes, searchTerm, viewMode,onEdit  }) => {
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +19,7 @@ const NotesContainer = ({ searchTerm, viewMode,onEdit  }) => {
       }
     };
     fetchData();
-  }, []);
+  }, [setNotes]);
 
   const handleDelete = async (noteId) => {
     const authToken = localStorage.getItem('authToken');
