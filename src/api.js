@@ -1,4 +1,4 @@
-const API_URL ='https://noteserver-1tbd.onrender.com';
+const API_URL ='https://noteserver-1tbd.onrender.com/api';
 
 export const loginUser = async (username, password) => {
   const response = await fetch(`${API_URL}/noteusers/login`, {
